@@ -1,0 +1,6 @@
+adapter: postgresql
+host: localhost
+port: 5432
+database: sinatra_postgres_dev
+username: postgres
+password: ankit1234
