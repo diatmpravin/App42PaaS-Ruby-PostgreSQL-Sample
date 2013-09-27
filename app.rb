@@ -8,6 +8,17 @@ dbconfig = YAML::load(File.open('config/database.yml'))
 # establish database connection
 ActiveRecord::Base.establish_connection(dbconfig)
 
+# create table
+ActiveRecord::Migration.class_eval do
+  create_table :users do |t|
+    t.string   :name
+    t.string   :email
+    t.string   :desc
+
+    t.timestamps
+  end
+end
+
 class App
   # call method, takes a single hash parameter and returns
   # an array containing the response status code, HTTP response

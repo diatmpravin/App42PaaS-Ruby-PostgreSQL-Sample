@@ -1,6 +1,6 @@
 adapter: postgresql
-host: localhost
-port: 5432
-database: sinatra_postgres_dev
-username: postgres
-password: ankit1234
+host: <host>                      # VM IP    
+port: <port>                      # VM Port   
+database: <database name>         # Database Name    
+username: <user_name>             # User Name    
+password: '<password>'            # Password  
