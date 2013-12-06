@@ -9,14 +9,16 @@ dbconfig = YAML::load(File.open('config/database.yml'))
 ActiveRecord::Base.establish_connection(dbconfig)
 
 # create table
-ActiveRecord::Migration.class_eval do
-  create_table :users do |t|
-    t.string   :name
-    t.string   :email
-    t.string   :desc
+unless ActiveRecord::Base.connection.table_exists? 'users'
+  ActiveRecord::Migration.class_eval do
+    create_table :users do |t|
+      t.string   :name
+      t.string   :email
+      t.string   :desc
 
-    t.timestamps
-  end
+      t.timestamps
+    end
+  end    
 end
 
 class App
